@@ -20,12 +20,11 @@ household <- household[, -c(1,2)]
 household <- cbind(datetime, household)
 
 ## open png device
-dev.copy(png, "plot3.png")
 png(file="plot3.png", width=480, height=480)
 
 ## create plot and turn off device
-with(household, plot(DateTime, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering"))
-lines(DateTime, household$Sub_metering_2, type="l", col="red")
-lines(DateTime, household$Sub_metering_3, type="l", col="blue")
+with(household, plot(datetime, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering"))
+lines(datetime, household$Sub_metering_2, type="l", col="red")
+lines(datetime, household$Sub_metering_3, type="l", col="blue")
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
 dev.off()

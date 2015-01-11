@@ -20,7 +20,6 @@ household <- household[, -c(1,2)]
 household <- cbind(datetime, household)
 
 ## open png device
-dev.copy(png, "plot4.png")
 png(file="plot4.png", width=480, height=480)
 
 ## set up the rows and columns for the four plots, create plots, and turn off device 
